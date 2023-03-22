@@ -1,0 +1,27 @@
+﻿@model BotaniFinder.Models.PlantIdentificationResult
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model != null)
+{
+    <div>
+        <h2>Identification Results</h2>
+        <p>Score: @Model.Score</p>
+        <p>Species: @Model.Species.ScientificNameWithoutAuthor</p>
+        <p>Genus: @Model.Species.Genus.ScientificNameWithoutAuthor</p>
+        <p>Family: @Model.Species.Family.ScientificNameWithoutAuthor</p>
+        <p>Common Names: @string.Join(", ", Model.Species.CommonNames)</p>
+    </div>
+}
+
+<form asp-controller="PlantIdentification" asp-action="PlantIdentificationView" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="image">Plant Image</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Identify Plant</button>
+</form>

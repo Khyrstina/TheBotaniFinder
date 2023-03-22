@@ -1,0 +1,49 @@
+﻿@using Newtonsoft.Json
+@model BotaniFinder.Models.Root
+
+@{
+    ViewData["Title"] = "";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model != null )
+{
+    <div>
+        <h2>Identification Results</h2>
+        <p>Highest Confidence Score: @(Model.Results[0].Score * 100) %</p>
+        @if (Model.Results[0].Species != null)
+        {
+            <p>Score: @(Model.Results[0].Score * 100) %</p>
+            <p>Species: @Model.Results[0].Species.ScientificNameWithoutAuthor</p>
+            <p>Genus: @Model.Results[0].Species.Genus.ScientificNameWithoutAuthor</p>
+            <p>Family: @Model.Results[0].Species.Family.ScientificNameWithoutAuthor</p>
+            <p>Citation: @Model.Results[0].Image[0].Citation</p>
+@*            <p>Date Added: @Model.Results[0].Image[0].Date</p>*@
+            <p>Image of Plant Species Identified:</p>
+            <img src="@Model.Results[0].Image[0].Url.M" />
+        <p>Common Names: @string.Join(", ", Model.Results[0].Species.CommonNames)</p>
+        <hr></hr>
+            <p>Score: @(Model.Results[1].Score * 100) %</p>
+            <p>Species: @Model.Results[1].Species.ScientificNameWithoutAuthor</p>
+            <p>Genus: @Model.Results[1].Species.Genus.ScientificNameWithoutAuthor</p>
+            <p>Family: @Model.Results[1].Species.Family.ScientificNameWithoutAuthor</p>
+            <p>Citation: @Model.Results[0].Image[1].Citation</p>
+            <p>Image of Plant Species Identified:</p>
+            <img src ="@Model.Results[1].Image[1].Url.M" />
+            <p>Common Names: @string.Join(", ", Model.Results[1].Species.CommonNames)</p>
+        }
+        else
+        {
+            <p>Could not identify the plant.</p>
+        }
+    </div>
+}
+
+<form asp-controller="PlantIdentification" asp-action="Index" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="image">Plant Image</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Identify Plant</button>
+</form>
