@@ -3,8 +3,9 @@
 @{
     ViewData["Title"] = "PreviousIdentificationsView";
 }
-
+<Center>
 <h1>Plants Recently Identified Using BotaniFinder</h1>
+</Center> 
 
 <ul class="image-list">
     @foreach (var item in Model)
@@ -20,6 +21,21 @@
 </ul>
 
 <style>
+    body {
+        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-lavender-simple-rose-texture-image_28475.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1, h2, h3 {
+        font-family: Verdana;
+        font-variant: normal;
+    }
+
+
+    .indent {
+        margin-left: 30px;
+    }
     .image-list {
         display: flex;
         flex-wrap: wrap;

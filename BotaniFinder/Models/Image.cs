@@ -16,9 +16,6 @@ namespace BotaniFinder.Models
         [JsonProperty("license")]
         public string License { get; set; }
 
-        //[JsonProperty("date")]
-        //public string Date { get; set; }
-
         [JsonProperty("citation")]
         public string Citation { get; set; }
 

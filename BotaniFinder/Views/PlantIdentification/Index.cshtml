@@ -4,8 +4,22 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    body {
+        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-lavender-simple-rose-texture-image_28475.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-<h1>@ViewData["Title"]</h1>
+    h1, h2, h3 {
+        font-family: Verdana;
+        font-variant: normal;
+    }
+
+</style>
+<center>
+<h1>Identify Your Own Plant</h1>
+</center>
 
 @if (Model != null)
 {
@@ -51,9 +65,13 @@
 }
 
 <form asp-controller="PlantIdentification" asp-action="Index" method="post" enctype="multipart/form-data">
+
     <div class="form-group">
-        <label for="image">Plant Image</label>
+        <label for="image" >Choose a file from your computer: </label>
         <input type="file" class="form-control-file" id="image" name="image">
+
     </div>
-    <button type="submit" class="btn btn-primary">Identify Plant</button>
+
+    <button  type="submit" class="btn btn-primary ">Submit This Image</button>
 </form>
+

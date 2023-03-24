@@ -1,3 +1,4 @@
+﻿
 namespace BotaniFinder.Models
 {
     public class ErrorViewModel
