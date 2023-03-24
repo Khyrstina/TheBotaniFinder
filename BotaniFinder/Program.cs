@@ -41,6 +41,4 @@ app.Run();
 {
     string connectionString = builder.Configuration.GetConnectionString("BotaniFinderDbContext");
     services.AddDbContext<BotaniFinderDbContext>(options => options.UseSqlServer(connectionString));
-
-    services.AddPlantNetClient(options => options.ApiKey = "2b10JXYocEFbfuM3nMDtQa93e");
 }

@@ -58,10 +58,15 @@ namespace BotaniFinder.Controllers
                 Score = plantIdentificationResult.Results[0].Score,
                 Species = plantIdentificationResult.Results[0].Species,
                 Image = plantIdentificationResult.Results[0].Image,
-                //Gbif = plantIdentificationResult.Results[0].Gbif
             };
-            //Save the result to the database
-            _dbContext.PlantIdentificationResults.Add(newPlantIdentificationResult);
+            //save changes to database
+            var newUrl = new Url
+            {
+                O = plantIdentificationResult.Results[0].Image[0].Url.O,
+                M = plantIdentificationResult.Results[0].Image[0].Url.M,
+                S = plantIdentificationResult.Results[0].Image[0].Url.O,
+            };
+            _dbContext.Urls.Add(newUrl);
             await _dbContext.SaveChangesAsync();
 
             return View(plantIdentificationResult);

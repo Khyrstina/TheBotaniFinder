@@ -7,7 +7,5 @@ namespace BotaniFinder.Models
         public int DateId { get; set; }
         //public DateTime DateTaken { get; set; }
 
-        // Navigation 
-        public List<Image> Images { get; set; }
     }
 }
