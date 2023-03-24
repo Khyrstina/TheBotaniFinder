@@ -1,23 +1,33 @@
 ﻿@model BotaniFinder.Models.PlantIdentificationResult
 
-@*@{
+@{
     ViewData["Title"] = "Index";
-}*@
-
-<h1>@ViewData["Title"]</h1>
-
+}
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Plant Identification App</title>
+    <title>BotaniFinder, for plant identification</title>
+    <style>
+        body {
+            background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-lavender-simple-rose-texture-image_28475.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1, h2, h3 {
+            font-family:sans-serif;
+            font-variant:small-caps;     }
+
+        }
+    </style>
 </head>
 <body>
     <div class="header">
         <h1>Plant Identification App</h1>
         <p>Identify plants quickly and easily with our app!</p>
     </div>
-    
+
     <div class="features">
         <h2>Features:</h2>
         <ul>
@@ -25,17 +35,16 @@
             <li>See other plants that have been recently identified by other users</li>
         </ul>
     </div>
-    
+
     <div class="how-it-works">
         <h2>How It Works:</h2>
         <p>Our app uses advanced image recognition technology to identify plants based on images you upload.</p>
     </div>
-    
+
     <div class="about-us">
         <h2>About Us:</h2>
         <p>Plant enthusiast and and software developer student, trying to make everyday applications that help.</p>
     </div>
-    
+
 </body>
 </html>
-

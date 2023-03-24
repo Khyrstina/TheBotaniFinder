@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BotaniFinder.Models.Url>
+
+@{
+    ViewData["Title"] = "PreviousIdentificationsView";
+}
+
+<h1>Plants Recently Identified Using BotaniFinder</h1>
+
+<ul class="image-list">
+    @foreach (var item in Model)
+    {
+        @if (item.UrlId != 1)
+        {
+            <li>
+                <img src="@item.O" alt="Image of identified plant">
+            </li>
+        }
+
+    }
+</ul>
+
+<style>
+    .image-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 80%;
+        padding: 0;
+        list-style: none;
+    }
+
+        .image-list li {
+            margin: 10px;
+        }
+
+        .image-list img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+</style>
+
