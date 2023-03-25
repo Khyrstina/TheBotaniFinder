@@ -3,7 +3,7 @@
 BotaniFinder is an application that utilizes the Pl@ntNet API to identify plants from images that you upload through the ID Your Plant tab. After uploading your plant image it returns the top 3 matching plants according to the API, as well as a confidence score, and an image to compare to your original. Currently it adds the URL of the top result to an Azure database, and returns identified plants on the Previously Identified Plants tab of the application. There is lots of room to grow this application, the Pl@ntNet API can do so much more than I'm currently utilizing. 
 
 
-# 3 Features
+# 3+ Required Features
 
  - **Make your application asynchronous:**
 		 - The PlantIdentificationResult class sends an HTTP request to the Pl@ntNet API asynchronously, and deserializes the response asynchronously as well using JsonConvert.DeserializeObject.
