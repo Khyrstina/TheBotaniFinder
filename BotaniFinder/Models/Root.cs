@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace BotaniFinder.Models
 {
+    //The Root class is used to deserialize the JSON object returned.
     public class Root
     {
         [JsonProperty("query")]

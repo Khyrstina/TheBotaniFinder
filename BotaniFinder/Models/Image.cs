@@ -21,7 +21,7 @@ namespace BotaniFinder.Models
 
         [JsonProperty("url")]
         public Url Url { get; set; }
-
+        // This PlantIdentificationResult property is used to store the result of the plant identification.
         public PlantIdentificationResult PlantIdentificationResult { get; set; }
     }
 }

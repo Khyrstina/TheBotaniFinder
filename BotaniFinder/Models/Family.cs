@@ -5,7 +5,7 @@ namespace BotaniFinder.Models
 {
     public class Family
     {
-
+        //JsonProperty is used to specify the name of the property in the JSON object.
         [JsonProperty("scientificNameWithoutAuthor")]
         public string ScientificNameWithoutAuthor { get; set; }
 

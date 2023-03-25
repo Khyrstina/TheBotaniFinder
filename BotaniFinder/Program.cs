@@ -4,10 +4,10 @@ using BotaniFinder.Models;
 using BotaniFinder.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
-
+//builder is used to create the web application.
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//AddControllersWithViews is used to add MVC to the application.
 builder.Services.AddControllersWithViews();
 
 //Configure services
