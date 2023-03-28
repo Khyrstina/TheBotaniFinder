@@ -16,7 +16,7 @@ namespace BotaniFinder.Controllers
         //The BotaniFinderDbContext is injected into the controller using dependency injection, with the constructor.
         //This follows the Dependency Inversion Principle in the SOLID principles.
         private readonly BotaniFinderDbContext _dbContext;
-        private readonly string _plantNetApiUrl = "";
+        private readonly string _plantNetApiUrl = "https://my-api.plantnet.org/v2/identify/all?include-related-images=true&no-reject=true&lang=en&api-key=2b10JXYocEFbfuM3nMDtQa93e";
 
         public PlantIdentificationController(BotaniFinderDbContext dbContext)
         {
